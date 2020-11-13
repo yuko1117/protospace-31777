@@ -58,7 +58,7 @@ class PrototypesController < ApplicationController
   def move_to_index
     @prototype = Prototype.find(params[:id])
     unless user_signed_in? && @prototype.user == current_user
-      redirect_to action: :index
+      redirect_to user_session_path
     end
   end
 end
